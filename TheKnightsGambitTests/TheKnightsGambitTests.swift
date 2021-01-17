@@ -10,24 +10,114 @@ import XCTest
 
 class TheKnightsGambitTests: XCTestCase {
 
+	var boardDimentions = 8
+
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        boardDimentions = 8
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+	// MARK: - Position Tests
+	func testPositionEquals() {
+		let position1 = Position(row: 7, col: 2)
+		let position2 = Position(row: 7, col: 2)
+		let position3 = Position(row: 3, col: 2)
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+		XCTAssertEqual(position1 == position2, true, "Positions should be equal")
+		XCTAssertEqual(position2 == position1, true, "Positions should be equal")
+		XCTAssertEqual(position2 == position3, false, "Positions should not be equal")
+		XCTAssertEqual(position3 == position2, false, "Positions should not be equal")
+		XCTAssertEqual(position1 == position3, false, "Positions should not be equal")
+		XCTAssertEqual(position3 == position1, false, "Positions should not be equal")
+	}
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+	func testMoveBy() {
+		let position = Position(row: 7, col: 2)
+		let move1 = Position(row: 1, col: 1)
+		let move2 = Position(row: 3, col: 2)
+
+		XCTAssertEqual(position.move(by: move1), Position(row: 8, col: 3), "Move was invalid")
+		XCTAssertEqual(position.move(by: move2), Position(row: 10, col: 4), "Move was invalid")
+		XCTAssertNotEqual(position.move(by: move2), Position(row: 3, col: 3), "Move should not be equal with the test Position")
+	}
+
+	func testPositionIsValid() {
+		boardDimentions = 8
+		let position = Position(row: 7, col: 2)
+		XCTAssertEqual(position.isValidMove(boardDimentions: boardDimentions), true, "Position is valid for \(boardDimentions)")
+
+		boardDimentions = 6
+		XCTAssertEqual(position.isValidMove(boardDimentions: boardDimentions), false, "Position is not valid for \(boardDimentions)")
+	}
+
+
+	// MARK: - Chess Solver Tests
+
+	func testSolverGetDistances() {
+		let startPosition = Position(row: 1, col: 3)
+		let endPosition = Position(row: 7, col: 2)
+
+		let distances = ChessSolver.getDistancesBetween(startPosition, endPosition)
+		XCTAssertEqual(distances.rowDist, 6, "Row distance should be 6.")
+		XCTAssertEqual(distances.colDist, 1, "Col distance should be 1.")
+	}
+
+	func testSolverCheckInitialPositionsSuccess() {
+		let startPosition = Position(row: 1, col: 3)
+		let endPosition = Position(row: 7, col: 2)
+
+		let hasSolutions = ChessSolver.checkInitialPositions(startPosition: startPosition, endPosition: endPosition)
+		XCTAssertEqual(hasSolutions, true, "The position pair should have solutions")
+
+		let solutions = ChessSolver.getKnightMoves(from: startPosition, endPosition: endPosition, for: boardDimentions)
+
+		XCTAssertNotEqual(solutions.isEmpty, hasSolutions, "The position pair should have solutions.")
+	}
+
+	func testSolverCheckInitialPositionsFailure() {
+		let startPosition = Position(row: 1, col: 3)
+		let endPosition = Position(row: 7, col: 3)
+
+		let hasSolutions = ChessSolver.checkInitialPositions(startPosition: startPosition, endPosition: endPosition)
+		XCTAssertEqual(hasSolutions, false, "The position pair should not have solutions")
+
+		let solutions = ChessSolver.getKnightMoves(from: startPosition, endPosition: endPosition, for: boardDimentions)
+
+		XCTAssertNotEqual(solutions.isEmpty, hasSolutions, "The position pair should not have solutions.")
+	}
+
+	func testSolverUnsolvablePositions() {
+		let startPosition = Position(row: 3, col: 3)
+		let endPosition = Position(row: 4, col: 4)
+
+		let solutions = ChessSolver.getKnightMoves(from: startPosition, endPosition: endPosition, for: boardDimentions)
+
+		XCTAssertEqual(solutions.count, 0, "There should be no solutions.")
+	}
+
+	func testSolverUnsolvablePositionsDistanceTooFar() {
+		let startPosition = Position(row: 0, col: 2)
+		let endPosition = Position(row: 7, col: 5)
+
+		let solutions = ChessSolver.getKnightMoves(from: startPosition, endPosition: endPosition, for: boardDimentions)
+
+		XCTAssertEqual(solutions.count, 0, "There should be no solutions.")
+	}
+
+	func testSolverCornerSolutions() {
+		let startPosition = Position(row: 7, col: 6)
+		let endPosition = Position(row: 7, col: 7)
+
+		let solutions = ChessSolver.getKnightMoves(from: startPosition, endPosition: endPosition, for: boardDimentions)
+
+		XCTAssertEqual(solutions.count, 2, "There should 2 solutions.")
+	}
+
+	// MARK: - Extensions Tests
+	func testEvenOddNumbers() {
+		XCTAssertEqual(2.isEven, true, "2 should be even, don't you think?")
+		XCTAssertEqual(2.isOdd, false, "2 should not be odd, right?")
+		XCTAssertEqual(7.isOdd, true, "7 should be odd, right?")
+		XCTAssertEqual((152 + 17).isOdd, true, "\(152 + 17) should be odd!")
+	}
 
 }

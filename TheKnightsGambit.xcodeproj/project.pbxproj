@@ -9,12 +9,31 @@
 /* Begin PBXBuildFile section */
 		ECAA16FF25B3241A00FC0B57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA16FE25B3241A00FC0B57 /* AppDelegate.swift */; };
 		ECAA170125B3241A00FC0B57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA170025B3241A00FC0B57 /* SceneDelegate.swift */; };
-		ECAA170325B3241A00FC0B57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA170225B3241A00FC0B57 /* ViewController.swift */; };
+		ECAA170325B3241A00FC0B57 /* ChessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA170225B3241A00FC0B57 /* ChessViewController.swift */; };
 		ECAA170625B3241A00FC0B57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECAA170425B3241A00FC0B57 /* Main.storyboard */; };
 		ECAA170825B3241C00FC0B57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECAA170725B3241C00FC0B57 /* Assets.xcassets */; };
 		ECAA170B25B3241C00FC0B57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECAA170925B3241C00FC0B57 /* LaunchScreen.storyboard */; };
 		ECAA171625B3241D00FC0B57 /* TheKnightsGambitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA171525B3241D00FC0B57 /* TheKnightsGambitTests.swift */; };
 		ECAA172125B3241D00FC0B57 /* TheKnightsGambitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA172025B3241D00FC0B57 /* TheKnightsGambitUITests.swift */; };
+		ECAA173C25B32BEC00FC0B57 /* ChessBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA173B25B32BEC00FC0B57 /* ChessBoardView.swift */; };
+		ECAA174925B32EE800FC0B57 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA174825B32EE800FC0B57 /* Extensions.swift */; };
+		ECAA175D25B3662700FC0B57 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA175C25B3662700FC0B57 /* Constants.swift */; };
+		ECAA175E25B3662700FC0B57 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA175C25B3662700FC0B57 /* Constants.swift */; };
+		ECAA175F25B3662700FC0B57 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA175C25B3662700FC0B57 /* Constants.swift */; };
+		ECAA176425B3695E00FC0B57 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA176325B3695E00FC0B57 /* Position.swift */; };
+		ECAA176525B3695E00FC0B57 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA176325B3695E00FC0B57 /* Position.swift */; };
+		ECAA176625B3695E00FC0B57 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA176325B3695E00FC0B57 /* Position.swift */; };
+		ECAA177225B3698F00FC0B57 /* KnightPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA177125B3698F00FC0B57 /* KnightPath.swift */; };
+		ECAA177325B3698F00FC0B57 /* KnightPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA177125B3698F00FC0B57 /* KnightPath.swift */; };
+		ECAA177425B3698F00FC0B57 /* KnightPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA177125B3698F00FC0B57 /* KnightPath.swift */; };
+		ECAA177C25B36A2900FC0B57 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA177B25B36A2900FC0B57 /* SquareView.swift */; };
+		ECAA177D25B36A2900FC0B57 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA177B25B36A2900FC0B57 /* SquareView.swift */; };
+		ECAA177E25B36A2900FC0B57 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA177B25B36A2900FC0B57 /* SquareView.swift */; };
+		ECABDF3A25B48C7C00FB0B04 /* ChessSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABDF3925B48C7C00FB0B04 /* ChessSolver.swift */; };
+		ECABDF3B25B48C7C00FB0B04 /* ChessSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABDF3925B48C7C00FB0B04 /* ChessSolver.swift */; };
+		ECABDF3C25B48C7C00FB0B04 /* ChessSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABDF3925B48C7C00FB0B04 /* ChessSolver.swift */; };
+		ECABDF4B25B4B82D00FB0B04 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA174825B32EE800FC0B57 /* Extensions.swift */; };
+		ECABDF4F25B4B82E00FB0B04 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA174825B32EE800FC0B57 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +57,7 @@
 		ECAA16FB25B3241A00FC0B57 /* TheKnightsGambit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheKnightsGambit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECAA16FE25B3241A00FC0B57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECAA170025B3241A00FC0B57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ECAA170225B3241A00FC0B57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ECAA170225B3241A00FC0B57 /* ChessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessViewController.swift; sourceTree = "<group>"; };
 		ECAA170525B3241A00FC0B57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECAA170725B3241C00FC0B57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECAA170A25B3241C00FC0B57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +68,13 @@
 		ECAA171C25B3241D00FC0B57 /* TheKnightsGambitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheKnightsGambitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECAA172025B3241D00FC0B57 /* TheKnightsGambitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheKnightsGambitUITests.swift; sourceTree = "<group>"; };
 		ECAA172225B3241D00FC0B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECAA173B25B32BEC00FC0B57 /* ChessBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoardView.swift; sourceTree = "<group>"; };
+		ECAA174825B32EE800FC0B57 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ECAA175C25B3662700FC0B57 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ECAA176325B3695E00FC0B57 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		ECAA177125B3698F00FC0B57 /* KnightPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnightPath.swift; sourceTree = "<group>"; };
+		ECAA177B25B36A2900FC0B57 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		ECABDF3925B48C7C00FB0B04 /* ChessSolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessSolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +125,12 @@
 		ECAA16FD25B3241A00FC0B57 /* TheKnightsGambit */ = {
 			isa = PBXGroup;
 			children = (
-				ECAA16FE25B3241A00FC0B57 /* AppDelegate.swift */,
-				ECAA170025B3241A00FC0B57 /* SceneDelegate.swift */,
-				ECAA170225B3241A00FC0B57 /* ViewController.swift */,
-				ECAA170425B3241A00FC0B57 /* Main.storyboard */,
+				ECAA173725B32BBF00FC0B57 /* ViewControllers */,
+				ECAA174025B32BF200FC0B57 /* Views */,
+				ECAA176A25B3696400FC0B57 /* Classes */,
+				ECAA175525B32F1A00FC0B57 /* Helpers */,
+				ECAA174425B32C0A00FC0B57 /* Supporting Files */,
 				ECAA170725B3241C00FC0B57 /* Assets.xcassets */,
-				ECAA170925B3241C00FC0B57 /* LaunchScreen.storyboard */,
-				ECAA170C25B3241C00FC0B57 /* Info.plist */,
 			);
 			path = TheKnightsGambit;
 			sourceTree = "<group>";
@@ -126,6 +151,54 @@
 				ECAA172225B3241D00FC0B57 /* Info.plist */,
 			);
 			path = TheKnightsGambitUITests;
+			sourceTree = "<group>";
+		};
+		ECAA173725B32BBF00FC0B57 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ECAA170225B3241A00FC0B57 /* ChessViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ECAA174025B32BF200FC0B57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ECAA170425B3241A00FC0B57 /* Main.storyboard */,
+				ECAA173B25B32BEC00FC0B57 /* ChessBoardView.swift */,
+				ECAA177B25B36A2900FC0B57 /* SquareView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ECAA174425B32C0A00FC0B57 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ECAA16FE25B3241A00FC0B57 /* AppDelegate.swift */,
+				ECAA170025B3241A00FC0B57 /* SceneDelegate.swift */,
+				ECAA170925B3241C00FC0B57 /* LaunchScreen.storyboard */,
+				ECAA170C25B3241C00FC0B57 /* Info.plist */,
+				ECAA175C25B3662700FC0B57 /* Constants.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ECAA175525B32F1A00FC0B57 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ECAA174825B32EE800FC0B57 /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		ECAA176A25B3696400FC0B57 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ECAA176325B3695E00FC0B57 /* Position.swift */,
+				ECAA177125B3698F00FC0B57 /* KnightPath.swift */,
+				ECABDF3925B48C7C00FB0B04 /* ChessSolver.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +331,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECAA170325B3241A00FC0B57 /* ViewController.swift in Sources */,
+				ECAA176425B3695E00FC0B57 /* Position.swift in Sources */,
+				ECAA174925B32EE800FC0B57 /* Extensions.swift in Sources */,
+				ECAA173C25B32BEC00FC0B57 /* ChessBoardView.swift in Sources */,
+				ECAA170325B3241A00FC0B57 /* ChessViewController.swift in Sources */,
 				ECAA16FF25B3241A00FC0B57 /* AppDelegate.swift in Sources */,
 				ECAA170125B3241A00FC0B57 /* SceneDelegate.swift in Sources */,
+				ECAA177C25B36A2900FC0B57 /* SquareView.swift in Sources */,
+				ECABDF3A25B48C7C00FB0B04 /* ChessSolver.swift in Sources */,
+				ECAA177225B3698F00FC0B57 /* KnightPath.swift in Sources */,
+				ECAA175D25B3662700FC0B57 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +349,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECAA171625B3241D00FC0B57 /* TheKnightsGambitTests.swift in Sources */,
+				ECAA177D25B36A2900FC0B57 /* SquareView.swift in Sources */,
+				ECAA175E25B3662700FC0B57 /* Constants.swift in Sources */,
+				ECABDF3B25B48C7C00FB0B04 /* ChessSolver.swift in Sources */,
+				ECAA177325B3698F00FC0B57 /* KnightPath.swift in Sources */,
+				ECAA176525B3695E00FC0B57 /* Position.swift in Sources */,
+				ECABDF4B25B4B82D00FB0B04 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +363,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECAA172125B3241D00FC0B57 /* TheKnightsGambitUITests.swift in Sources */,
+				ECAA177E25B36A2900FC0B57 /* SquareView.swift in Sources */,
+				ECAA175F25B3662700FC0B57 /* Constants.swift in Sources */,
+				ECABDF3C25B48C7C00FB0B04 /* ChessSolver.swift in Sources */,
+				ECAA177425B3698F00FC0B57 /* KnightPath.swift in Sources */,
+				ECAA176625B3695E00FC0B57 /* Position.swift in Sources */,
+				ECABDF4F25B4B82E00FB0B04 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +531,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3S554QPT7A;
 				INFOPLIST_FILE = TheKnightsGambit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +551,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3S554QPT7A;
 				INFOPLIST_FILE = TheKnightsGambit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
