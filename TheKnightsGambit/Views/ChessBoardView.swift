@@ -16,7 +16,7 @@ class ChessBoardView: UIView {
 
 	// MARK: - Model
 	weak var delegate: ChessBoardViewDelegate? = nil
-	var dimentions = 8 {
+	var dimentions = 0 {
 		didSet {
 			clearBoard()
 			createBoard()
@@ -65,6 +65,10 @@ class ChessBoardView: UIView {
 	}
 
 	private func createBoard() {
+		guard dimentions > 0 else {
+			return
+		}
+
 		for i in 0..<dimentions {
 			squareViews.append([SquareView]())
 			for j in 0..<dimentions {

@@ -12,12 +12,6 @@ class ChessViewController: UIViewController {
 	// MARK: - Model
 	var selectedPositions = [Position]()
 
-	private var dimentions = 8 {
-		didSet {
-			dimentionsLabel.text = "\(dimentions) 𝗑 \(dimentions)"
-			updateBoardSize()
-		}
-	}
 
 	// MARK: - View
 	@IBOutlet weak var chessView: ChessBoardView!
@@ -29,12 +23,16 @@ class ChessViewController: UIViewController {
 		super.viewDidLoad()
 		dimentionStepper.value = 8
 		chessView.delegate = self
+	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
 		updateBoardSize()
 	}
 
 	private func updateBoardSize() {
 		selectedPositions.removeAll()
-		chessView.dimentions = dimentions
+		chessView.dimentions = Int(dimentionStepper.value)
 	}
 
 	fileprivate func resetBoard() {
@@ -44,7 +42,9 @@ class ChessViewController: UIViewController {
 
 	// MARK: - IBActions
 	@IBAction func dimentionsChanged(_ sender: UIStepper) {
-		dimentions = Int(sender.value)
+		let dimentions = Int(sender.value)
+		dimentionsLabel.text = "\(dimentions) 𝗑 \(dimentions)"
+		updateBoardSize()
 	}
 
 	@IBAction func runButtonTapped(_ sender: UIButton) {
