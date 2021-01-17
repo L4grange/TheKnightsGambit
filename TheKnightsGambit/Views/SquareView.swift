@@ -41,9 +41,9 @@ class SquareView: UILabel {
 		baselineAdjustment = .alignCenters
 		font = UIFont.systemFont(ofSize: 50)
 
-		#if DEBUG
-		text = "\(position.row).\(position.col)"
-		#endif
+//		#if DEBUG
+//		text = "\(position.row).\(position.col)"
+//		#endif
 	}
 
 	// MARK: - Computed Properites
