@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -15,23 +15,23 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ChessViewController" customModule="TheKnightsGambit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="The Knight's Gambit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxB-Lr-1Ru">
-                                <rect key="frame" x="16" y="63.999999999999993" width="343" height="28.666666666666664"/>
+                                <rect key="frame" x="16" y="63.999999999999993" width="382" height="28.666666666666664"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This application will mark all the possible paths that a Knight can take from a starting tile to another tile in 3 moves." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIF-aq-GWE">
-                                <rect key="frame" x="16" y="100.66666666666669" width="343" height="61"/>
+                                <rect key="frame" x="16" y="100.66666666666669" width="382" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YpC-cQ-ZmS">
-                                <rect key="frame" x="16" y="181.66666666666666" width="343" height="32"/>
+                                <rect key="frame" x="16" y="181.66666666666666" width="382" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" text="Board Dimentions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mH-i9-pLu">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="32"/>
@@ -40,13 +40,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 𝗑 8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lc-h2-RNJ">
-                                        <rect key="frame" x="148" y="0.0" width="93" height="32"/>
+                                        <rect key="frame" x="148" y="0.0" width="132" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minimumValue="6" maximumValue="16" translatesAutoresizingMaskIntoConstraints="NO" id="bmK-b0-Jct">
-                                        <rect key="frame" x="249" y="0.0" width="94" height="32"/>
+                                        <rect key="frame" x="288" y="0.0" width="94" height="32"/>
                                         <connections>
                                             <action selector="dimentionsChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="M6k-PC-by9"/>
                                         </connections>
@@ -54,7 +54,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" translatesAutoresizingMaskIntoConstraints="NO" id="nlD-KK-Hkr" customClass="ChessBoardView" customModule="TheKnightsGambit" customModuleProvider="target">
-                                <rect key="frame" x="16" y="233.66666666666663" width="343" height="343"/>
+                                <rect key="frame" x="16" y="233.66666666666663" width="382" height="382"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nlD-KK-Hkr" secondAttribute="height" multiplier="1:1" id="QEW-EB-xDw"/>
@@ -72,7 +72,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6c-h5-4bL">
-                                <rect key="frame" x="114" y="596.66666666666663" width="147" height="40"/>
+                                <rect key="frame" x="133.66666666666666" y="635.66666666666663" width="146.99999999999997" height="40"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Fcr-sL-7f0"/>
@@ -92,20 +92,20 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" horizontalCompressionResistancePriority="746" text="Path Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fa-02-4tf">
-                                <rect key="frame" x="54" y="737.66666666666663" width="263" height="20.333333333333371"/>
+                                <rect key="frame" x="54" y="821.66666666666663" width="302" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuQ-fz-dTN">
-                                <rect key="frame" x="325" y="733" width="30" height="30"/>
+                                <rect key="frame" x="364" y="817" width="30" height="30"/>
                                 <state key="normal" title="➡️"/>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Qn-LS-KdZ"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Nk-wS-enC">
-                                <rect key="frame" x="16" y="733" width="30" height="30"/>
+                                <rect key="frame" x="16" y="817" width="30" height="30"/>
                                 <state key="normal" title="⬅️"/>
                                 <connections>
                                     <action selector="previousButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XTK-2J-LSf"/>
@@ -163,15 +163,15 @@
                             <mask key="constraints">
                                 <exclude reference="fuW-kF-MW2"/>
                                 <exclude reference="noQ-Ne-zll"/>
-                                <exclude reference="9Lh-Ry-fPo"/>
-                                <exclude reference="v3w-lz-lOL"/>
-                                <exclude reference="xJa-1R-0TJ"/>
                                 <exclude reference="A9l-SI-JFh"/>
                                 <exclude reference="cXN-bQ-DKg"/>
                                 <exclude reference="Hig-qi-xpV"/>
                                 <exclude reference="mHY-ny-l2C"/>
                                 <exclude reference="6tT-eK-Kpi"/>
                                 <exclude reference="ooZ-OL-MdL"/>
+                                <exclude reference="9Lh-Ry-fPo"/>
+                                <exclude reference="v3w-lz-lOL"/>
+                                <exclude reference="xJa-1R-0TJ"/>
                                 <exclude reference="54W-7M-6lq"/>
                                 <exclude reference="blk-O0-efC"/>
                                 <exclude reference="tKT-bO-nev"/>
@@ -184,15 +184,15 @@
                             <mask key="constraints">
                                 <exclude reference="HO7-WW-fZt"/>
                                 <include reference="fuW-kF-MW2"/>
-                                <exclude reference="Q3D-mx-ExD"/>
-                                <exclude reference="c2c-wr-iIa"/>
-                                <include reference="v3w-lz-lOL"/>
                                 <include reference="A9l-SI-JFh"/>
                                 <exclude reference="c8G-GS-1YU"/>
                                 <exclude reference="KxD-W9-KUM"/>
                                 <include reference="mHY-ny-l2C"/>
                                 <exclude reference="gS6-y1-epB"/>
                                 <include reference="ooZ-OL-MdL"/>
+                                <exclude reference="Q3D-mx-ExD"/>
+                                <exclude reference="c2c-wr-iIa"/>
+                                <include reference="v3w-lz-lOL"/>
                                 <exclude reference="LEZ-BX-L91"/>
                                 <include reference="blk-O0-efC"/>
                                 <exclude reference="odc-v7-W2b"/>
@@ -205,16 +205,16 @@
                             <mask key="constraints">
                                 <exclude reference="HO7-WW-fZt"/>
                                 <include reference="noQ-Ne-zll"/>
-                                <include reference="9Lh-Ry-fPo"/>
-                                <exclude reference="Q3D-mx-ExD"/>
-                                <exclude reference="c2c-wr-iIa"/>
-                                <exclude reference="xJa-1R-0TJ"/>
                                 <exclude reference="c8G-GS-1YU"/>
                                 <include reference="cXN-bQ-DKg"/>
                                 <include reference="Hig-qi-xpV"/>
                                 <exclude reference="KxD-W9-KUM"/>
                                 <include reference="6tT-eK-Kpi"/>
                                 <exclude reference="gS6-y1-epB"/>
+                                <include reference="9Lh-Ry-fPo"/>
+                                <exclude reference="Q3D-mx-ExD"/>
+                                <exclude reference="c2c-wr-iIa"/>
+                                <exclude reference="xJa-1R-0TJ"/>
                                 <include reference="54W-7M-6lq"/>
                                 <exclude reference="LEZ-BX-L91"/>
                                 <exclude reference="odc-v7-W2b"/>

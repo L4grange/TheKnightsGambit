@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ChessBoardViewDelegate: class {
+protocol ChessBoardViewDelegate: AnyObject {
 	func shouldSelectSquare(_ square: SquareView) -> Bool
 	func didSelectSquare(_ square: SquareView)
 }
@@ -121,7 +121,7 @@ class ChessBoardView: UIView {
 		return view
 	}
 
-	// MARK: - Reset functions
+	// MARK: - Reset Board Functions
 
 	private func clearBoard() {
 		squareViews.forEach { $0.forEach { $0.removeFromSuperview() } }
@@ -136,7 +136,7 @@ class ChessBoardView: UIView {
 		resetPathLayers()
 	}
 
-	private func resetPathLayers() {
+	func resetPathLayers() {
 		pathLayers.forEach { $0.removeFromSuperlayer() }
 		pathLayers.removeAll()
 	}
@@ -209,6 +209,7 @@ class ChessBoardView: UIView {
 	}
 
 	// MARK: - Selectors
+	
 	@objc private func didTapOnSquare(_ sender: UITapGestureRecognizer) {
 		if let square = sender.view as? SquareView {
 			square.popAnimation(with: Constants.defaultAnimationDuration)

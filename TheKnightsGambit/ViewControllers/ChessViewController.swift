@@ -14,10 +14,6 @@ class ChessViewController: UIViewController {
 	var knightPaths = [KnightPath]()
 	var visiblePathIndex = 0 {
 		didSet {
-			print("VI = \(visiblePathIndex)")
-			guard visiblePathIndex >= 0 && visiblePathIndex < knightPaths.count else {
-				return
-			}
 			drawSelectedPath()
 		}
 	}
@@ -40,6 +36,21 @@ class ChessViewController: UIViewController {
 		updateBoardSize()
 	}
 
+	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+		super.viewWillTransition(to: size, with: coordinator)
+
+		coordinator.animate(alongsideTransition: {(_ context: Any) -> Void in
+		}, completion: {(_ context: Any) -> Void in
+			if self.visiblePathIndex < 0 || self.visiblePathIndex == self.knightPaths.count {
+				self.drawAllPaths()
+			} else {
+				self.drawSelectedPath()
+			}
+		})
+	}
+
+	// MARK: - Private Functions
+
 	private func updateBoardSize() {
 		selectedPositions.removeAll()
 		chessView.dimentions = Int(dimentionStepper.value)
@@ -58,6 +69,9 @@ class ChessViewController: UIViewController {
 	}
 
 	private func drawSelectedPath() {
+		guard visiblePathIndex >= 0 && visiblePathIndex < knightPaths.count else {
+			return
+		}
 		setPathDescription()
 		chessView.drawKnightPaths([knightPaths[visiblePathIndex]], pathIndex: visiblePathIndex)
 	}
@@ -99,9 +113,10 @@ class ChessViewController: UIViewController {
 	}
 
 	@IBAction func runButtonTapped(_ sender: UIButton) {
-		visiblePathIndex = 0
 		showPathControls(false)
 		knightPaths.removeAll()
+		visiblePathIndex = 0
+		chessView.resetPathLayers()
 
 		if selectedPositions.count == 2 {
 			knightPaths = ChessSolver.getKnightMoves(from: selectedPositions[0], endPosition: selectedPositions[1], for: chessView.dimentions)
