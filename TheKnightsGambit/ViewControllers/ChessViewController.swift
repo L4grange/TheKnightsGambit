@@ -11,13 +11,23 @@ class ChessViewController: UIViewController {
 
 	// MARK: - Model
 	var selectedPositions = [Position]()
-
+	var knightPaths = [KnightPath]()
+	var visiblePathIndex = 0 {
+		didSet {
+			print("VI = \(visiblePathIndex)")
+			guard visiblePathIndex >= 0 && visiblePathIndex < knightPaths.count else {
+				return
+			}
+			drawSelectedPath()
+		}
+	}
 
 	// MARK: - View
 	@IBOutlet weak var chessView: ChessBoardView!
 	@IBOutlet weak var dimentionsLabel: UILabel!
 	@IBOutlet weak var dimentionStepper: UIStepper!
-
+	@IBOutlet weak var pathDescriptionLabel: UILabel!
+	@IBOutlet var pathSelectionButtons: [UIButton]!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -33,11 +43,34 @@ class ChessViewController: UIViewController {
 	private func updateBoardSize() {
 		selectedPositions.removeAll()
 		chessView.dimentions = Int(dimentionStepper.value)
+		showPathControls(false)
 	}
 
 	fileprivate func resetBoard() {
 		selectedPositions.removeAll()
 		chessView.resetBoard()
+		showPathControls(false)
+	}
+
+	private func showPathControls(_ show: Bool) {
+		pathDescriptionLabel.isHidden = !show
+		pathSelectionButtons.forEach { $0.isHidden = !show }
+	}
+
+	private func drawSelectedPath() {
+		setPathDescription()
+		chessView.drawKnightPaths([knightPaths[visiblePathIndex]], pathIndex: visiblePathIndex)
+	}
+
+	private func drawAllPaths() {
+		setPathDescription(allPaths: true)
+		chessView.drawKnightPaths(knightPaths)
+	}
+
+	private func setPathDescription(allPaths: Bool = false) {
+		pathDescriptionLabel.text = allPaths
+			? "Showing all \(knightPaths.count) paths."
+			: "Path \(visiblePathIndex + 1) of \(knightPaths.count): \(knightPaths[visiblePathIndex])"
 	}
 
 	// MARK: - IBActions
@@ -47,11 +80,35 @@ class ChessViewController: UIViewController {
 		updateBoardSize()
 	}
 
+	@IBAction func previousButtonTapped(_ sender: UIButton) {
+		guard visiblePathIndex > 0 else {
+			visiblePathIndex = -1
+			drawAllPaths()
+			return
+		}
+		visiblePathIndex -= 1
+	}
+
+	@IBAction func nextButtonTapped(_ sender: UIButton) {
+		guard visiblePathIndex < knightPaths.count - 1 else {
+			visiblePathIndex = knightPaths.count
+			drawAllPaths()
+			return
+		}
+		visiblePathIndex += 1
+	}
+
 	@IBAction func runButtonTapped(_ sender: UIButton) {
+		visiblePathIndex = 0
+		showPathControls(false)
+		knightPaths.removeAll()
+
 		if selectedPositions.count == 2 {
-			let paths = ChessSolver.getKnightMoves(from: selectedPositions[0], endPosition: selectedPositions[1], for: chessView.dimentions)
-			if !paths.isEmpty {
-				chessView.drawKnightPaths(paths)
+			knightPaths = ChessSolver.getKnightMoves(from: selectedPositions[0], endPosition: selectedPositions[1], for: chessView.dimentions)
+			print("Found \(knightPaths.count) paths! Drawing knight paths for:\n\(knightPaths)")
+			if !knightPaths.isEmpty {
+				showPathControls(true)
+				visiblePathIndex = 0
 			} else {
 				let alert = UIAlertController(title: "No paths found", message: "The knight cannot reach the selected end position in 3 moves. Do you want to reset the board and try again?", preferredStyle: .alert)
 				alert.addAction(UIAlertAction(title: "Yes", style: .destructive) { [weak self] action in

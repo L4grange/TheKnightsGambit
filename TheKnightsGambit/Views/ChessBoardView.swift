@@ -143,42 +143,51 @@ class ChessBoardView: UIView {
 
 	// MARK: - Drawing
 
-	func drawKnightPaths(_ paths: [KnightPath]) {
+	func drawKnightPaths(_ paths: [KnightPath], pathIndex: Int? = nil) {
 		resetPathLayers()
-		print("Found \(paths.count) paths! Drawing knight paths for:\n\(paths)")
 
 		let squareWidth = (bounds.width - borderWidth * 2) / CGFloat(dimentions)
-		let squareCenter = squareWidth / 2.0
-		var lineWidth: CGFloat = 12.0
+		var lineWidth: CGFloat = paths.count > 1 ? 12.0 : 4.0
 
 		guard let startPosition = selectedSquareViews.first?.position,
 			  let endPosition = selectedSquareViews.last?.position else {
 			return
 		}
 
-		for (index, path) in paths.enumerated() {
-			let pathColor = Constants.pathColors[index % 12]
-			let firstMove = path.move1
-			let secondMove = path.move2
+		if let index = pathIndex, let path = paths.first {
+			// Draw single path
+			drawKnightPath(path, for: index, startPosition, endPosition, lineWidth, squareWidth)
+		} else {
+			// Draw all paths
+			for (index, path) in paths.enumerated() {
+				drawKnightPath(path, for: index, startPosition, endPosition, lineWidth, squareWidth)
 
-			// Draw the 1st move
-			drawLine(from: startPosition, to: firstMove, color: pathColor, lineWidth: lineWidth, squareWidth:  squareWidth, squareCenter: squareCenter)
-
-			// Draw the 2nd move
-			drawLine(from: firstMove, to: secondMove, color: pathColor, lineWidth: lineWidth, squareWidth:  squareWidth, squareCenter: squareCenter)
-
-			// Draw the 3rd move
-			drawLine(from: secondMove, to: endPosition, color: pathColor, lineWidth: lineWidth, squareWidth:  squareWidth, squareCenter: squareCenter)
-
-			// Adjust the line width
-			lineWidth -= 1.5
-			if lineWidth < 3.0 {
-				lineWidth = 3.0
+				// Adjust the line width
+				lineWidth -= 1.5
+				if lineWidth < 3.0 {
+					lineWidth = 3.0
+				}
 			}
 		}
 	}
 
-	func drawLine(from startPosition: Position, to endPosition: Position, color: UIColor, lineWidth: CGFloat, squareWidth: CGFloat, squareCenter: CGFloat) {
+	private func drawKnightPath(_ path: KnightPath, for index: Int, _ startPosition: Position, _ endPosition: Position, _ lineWidth: CGFloat, _ squareWidth: CGFloat) {
+		let pathColor = Constants.pathColors[index % 12]
+		let firstMove = path.move1
+		let secondMove = path.move2
+		let squareCenter = squareWidth / 2.0
+
+		// Draw the 1st move
+		drawLine(from: startPosition, to: firstMove, color: pathColor, lineWidth: lineWidth, squareWidth:  squareWidth, squareCenter: squareCenter)
+
+		// Draw the 2nd move
+		drawLine(from: firstMove, to: secondMove, color: pathColor, lineWidth: lineWidth, squareWidth:  squareWidth, squareCenter: squareCenter)
+
+		// Draw the 3rd move
+		drawLine(from: secondMove, to: endPosition, color: pathColor, lineWidth: lineWidth, squareWidth:  squareWidth, squareCenter: squareCenter)
+	}
+
+	private func drawLine(from startPosition: Position, to endPosition: Position, color: UIColor, lineWidth: CGFloat, squareWidth: CGFloat, squareCenter: CGFloat) {
 
 		let startX = squareWidth * CGFloat(startPosition.col) + squareCenter
 		let startY = squareWidth * CGFloat(startPosition.row) + squareCenter
