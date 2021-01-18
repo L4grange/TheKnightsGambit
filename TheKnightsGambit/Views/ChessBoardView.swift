@@ -73,26 +73,32 @@ class ChessBoardView: UIView {
 			squareViews.append([SquareView]())
 			for j in 0..<dimentions {
 				var previousLeadingViewLayoutAnchor: NSLayoutAnchor = containerView.leadingAnchor
-				var previousTopViewLayoutAnchor: NSLayoutAnchor = containerView.topAnchor
+				var previousAboveViewLayoutAnchor: NSLayoutAnchor = containerView.topAnchor
+				var previousLeadingViewTopLayoutAnchor: NSLayoutYAxisAnchor? = nil
 
 				if i > 0 && i < dimentions {
-					previousTopViewLayoutAnchor = squareViews[i - 1][j].bottomAnchor
+					previousAboveViewLayoutAnchor = squareViews[i - 1][j].bottomAnchor
 				}
 
 				if j > 0 && j < dimentions  {
 					previousLeadingViewLayoutAnchor = squareViews[i][j - 1].trailingAnchor
+					previousLeadingViewTopLayoutAnchor = squareViews[i][j - 1].topAnchor
 				}
 
 				let squareView = createSquareView(for: i, j)
 				containerView.addSubview(squareView)
 
-				NSLayoutConstraint.activate([
+				var constraints = [
 					squareView.widthAnchor.constraint(equalTo: squareView.heightAnchor, multiplier: 1.0), // Aspect ratio
 					squareView.leadingAnchor.constraint(equalTo: previousLeadingViewLayoutAnchor),
-					squareView.topAnchor.constraint(equalTo: previousTopViewLayoutAnchor),
-					squareView.widthAnchor.constraint(equalToConstant: (frame.width - borderWidth * 2) / CGFloat(dimentions))
-				])
+					squareView.topAnchor.constraint(equalTo: previousAboveViewLayoutAnchor),
+				]
 
+				if let previousLeadingViewTopLayoutAnchor = previousLeadingViewTopLayoutAnchor {
+					constraints.append(squareView.topAnchor.constraint(equalTo: previousLeadingViewTopLayoutAnchor))
+				}
+
+				NSLayoutConstraint.activate(constraints)
 				squareViews[i].append(squareView)
 			}
 

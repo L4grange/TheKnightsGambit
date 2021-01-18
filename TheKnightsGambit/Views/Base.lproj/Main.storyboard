@@ -30,26 +30,6 @@
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6c-h5-4bL">
-                                <rect key="frame" x="140.66666666666666" y="649.66666666666663" width="146.99999999999997" height="40"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Fcr-sL-7f0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <inset key="contentEdgeInsets" minX="16" minY="4" maxX="16" maxY="4"/>
-                                <state key="normal" title="Go for a ride ♞">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="runButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="evc-SP-aiS"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YpC-cQ-ZmS">
                                 <rect key="frame" x="16" y="181.66666666666666" width="396" height="32"/>
                                 <subviews>
@@ -91,27 +71,124 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6c-h5-4bL">
+                                <rect key="frame" x="140.66666666666666" y="649.66666666666663" width="146.99999999999997" height="40"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Fcr-sL-7f0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="4" maxX="16" maxY="4"/>
+                                <state key="normal" title="Go for a ride ♞">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="runButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="evc-SP-aiS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nlD-KK-Hkr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1LR-lT-QlQ"/>
+                            <constraint firstItem="W6c-h5-4bL" firstAttribute="top" secondItem="YpC-cQ-ZmS" secondAttribute="bottom" constant="20" id="54W-7M-6lq"/>
+                            <constraint firstItem="YpC-cQ-ZmS" firstAttribute="leading" secondItem="nlD-KK-Hkr" secondAttribute="trailing" constant="20" id="6tT-eK-Kpi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YpC-cQ-ZmS" secondAttribute="trailing" constant="16" id="8Wm-cA-rmT"/>
+                            <constraint firstItem="nlD-KK-Hkr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="9Lh-Ry-fPo"/>
+                            <constraint firstItem="JxB-Lr-1Ru" firstAttribute="leading" secondItem="nlD-KK-Hkr" secondAttribute="trailing" constant="20" id="A9l-SI-JFh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JxB-Lr-1Ru" secondAttribute="trailing" constant="16" id="CzB-x2-jzG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nlD-KK-Hkr" secondAttribute="trailing" constant="16" id="HO7-WW-fZt"/>
+                            <constraint firstItem="RIF-aq-GWE" firstAttribute="leading" secondItem="nlD-KK-Hkr" secondAttribute="trailing" constant="20" id="Hig-qi-xpV"/>
                             <constraint firstItem="RIF-aq-GWE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="KxD-W9-KUM"/>
                             <constraint firstItem="W6c-h5-4bL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LEZ-BX-L91"/>
                             <constraint firstItem="JxB-Lr-1Ru" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="O0t-Q4-rHz"/>
-                            <constraint firstAttribute="trailing" secondItem="RIF-aq-GWE" secondAttribute="trailing" constant="16" id="OmW-wZ-Hyi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RIF-aq-GWE" secondAttribute="trailing" constant="16" id="OmW-wZ-Hyi">
+                                <variation key="heightClass=compact-widthClass=compact" constant="16"/>
+                            </constraint>
                             <constraint firstItem="nlD-KK-Hkr" firstAttribute="top" secondItem="YpC-cQ-ZmS" secondAttribute="bottom" constant="20" id="Q3D-mx-ExD"/>
                             <constraint firstItem="YpC-cQ-ZmS" firstAttribute="top" secondItem="RIF-aq-GWE" secondAttribute="bottom" constant="20" id="V4e-iQ-iTN"/>
+                            <constraint firstItem="W6c-h5-4bL" firstAttribute="top" secondItem="YpC-cQ-ZmS" secondAttribute="bottom" constant="20" id="blk-O0-efC"/>
                             <constraint firstItem="nlD-KK-Hkr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c2c-wr-iIa"/>
                             <constraint firstItem="JxB-Lr-1Ru" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="c8G-GS-1YU"/>
+                            <constraint firstItem="JxB-Lr-1Ru" firstAttribute="leading" secondItem="nlD-KK-Hkr" secondAttribute="trailing" constant="20" id="cXN-bQ-DKg"/>
                             <constraint firstItem="RIF-aq-GWE" firstAttribute="top" secondItem="JxB-Lr-1Ru" secondAttribute="bottom" constant="8" symbolic="YES" id="cdl-1P-R0C"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nlD-KK-Hkr" secondAttribute="bottom" constant="8" id="fuW-kF-MW2"/>
                             <constraint firstItem="YpC-cQ-ZmS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gS6-y1-epB"/>
+                            <constraint firstItem="RIF-aq-GWE" firstAttribute="leading" secondItem="nlD-KK-Hkr" secondAttribute="trailing" constant="20" id="mHY-ny-l2C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="W6c-h5-4bL" secondAttribute="bottom" constant="8" id="mYs-6O-n7g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nlD-KK-Hkr" secondAttribute="bottom" constant="20" id="noQ-Ne-zll"/>
                             <constraint firstItem="W6c-h5-4bL" firstAttribute="top" secondItem="nlD-KK-Hkr" secondAttribute="bottom" constant="20" id="odc-v7-W2b"/>
+                            <constraint firstItem="YpC-cQ-ZmS" firstAttribute="leading" secondItem="nlD-KK-Hkr" secondAttribute="trailing" constant="20" id="ooZ-OL-MdL"/>
+                            <constraint firstItem="W6c-h5-4bL" firstAttribute="centerX" secondItem="YpC-cQ-ZmS" secondAttribute="centerX" id="tKT-bO-nev"/>
+                            <constraint firstItem="nlD-KK-Hkr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="v3w-lz-lOL"/>
+                            <constraint firstItem="W6c-h5-4bL" firstAttribute="centerX" secondItem="YpC-cQ-ZmS" secondAttribute="centerX" id="w9Q-Y2-iLW"/>
+                            <constraint firstItem="nlD-KK-Hkr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xJa-1R-0TJ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fuW-kF-MW2"/>
+                                <exclude reference="noQ-Ne-zll"/>
+                                <exclude reference="9Lh-Ry-fPo"/>
+                                <exclude reference="v3w-lz-lOL"/>
+                                <exclude reference="xJa-1R-0TJ"/>
+                                <exclude reference="A9l-SI-JFh"/>
+                                <exclude reference="cXN-bQ-DKg"/>
+                                <exclude reference="Hig-qi-xpV"/>
+                                <exclude reference="mHY-ny-l2C"/>
+                                <exclude reference="6tT-eK-Kpi"/>
+                                <exclude reference="ooZ-OL-MdL"/>
+                                <exclude reference="54W-7M-6lq"/>
+                                <exclude reference="blk-O0-efC"/>
+                                <exclude reference="tKT-bO-nev"/>
+                                <exclude reference="w9Q-Y2-iLW"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="HO7-WW-fZt"/>
+                                <include reference="fuW-kF-MW2"/>
+                                <exclude reference="mYs-6O-n7g"/>
+                                <exclude reference="Q3D-mx-ExD"/>
+                                <exclude reference="c2c-wr-iIa"/>
+                                <include reference="v3w-lz-lOL"/>
+                                <include reference="A9l-SI-JFh"/>
+                                <exclude reference="c8G-GS-1YU"/>
+                                <exclude reference="KxD-W9-KUM"/>
+                                <include reference="mHY-ny-l2C"/>
+                                <exclude reference="gS6-y1-epB"/>
+                                <include reference="ooZ-OL-MdL"/>
+                                <exclude reference="LEZ-BX-L91"/>
+                                <include reference="blk-O0-efC"/>
+                                <exclude reference="odc-v7-W2b"/>
+                                <include reference="w9Q-Y2-iLW"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="HO7-WW-fZt"/>
+                                <exclude reference="mYs-6O-n7g"/>
+                                <include reference="noQ-Ne-zll"/>
+                                <include reference="9Lh-Ry-fPo"/>
+                                <exclude reference="Q3D-mx-ExD"/>
+                                <exclude reference="c2c-wr-iIa"/>
+                                <exclude reference="xJa-1R-0TJ"/>
+                                <exclude reference="c8G-GS-1YU"/>
+                                <include reference="cXN-bQ-DKg"/>
+                                <include reference="Hig-qi-xpV"/>
+                                <exclude reference="KxD-W9-KUM"/>
+                                <include reference="6tT-eK-Kpi"/>
+                                <exclude reference="gS6-y1-epB"/>
+                                <include reference="54W-7M-6lq"/>
+                                <exclude reference="LEZ-BX-L91"/>
+                                <exclude reference="odc-v7-W2b"/>
+                                <include reference="tKT-bO-nev"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="chessView" destination="nlD-KK-Hkr" id="T78-Qh-HDF"/>
@@ -121,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="99.53271028037382" y="79.697624190064801"/>
+            <point key="canvasLocation" x="99.136069114470843" y="77.102803738317746"/>
         </scene>
     </scenes>
     <resources>
