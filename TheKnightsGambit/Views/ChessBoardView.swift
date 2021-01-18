@@ -196,6 +196,7 @@ class ChessBoardView: UIView {
 	// MARK: - Selectors
 	@objc private func didTapOnSquare(_ sender: UITapGestureRecognizer) {
 		if let square = sender.view as? SquareView {
+			square.popAnimation(with: Constants.defaultAnimationDuration)
 			if delegate?.shouldSelectSquare(square) ?? true {
 				selectedSquareViews.append(square)
 				square.select(isStartingPosition)

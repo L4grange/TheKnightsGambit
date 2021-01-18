@@ -25,3 +25,16 @@ extension UIColor {
 		return UIColor(hue: h, saturation: s, brightness: b * factor, alpha: a)
 	}
 }
+
+extension UIView {
+	func popAnimation(with duration: Double) {
+		transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+		UIView.animate(withDuration: duration,
+					   delay: 0,
+					   usingSpringWithDamping: CGFloat(0.8),
+					   initialSpringVelocity: CGFloat(2.0),
+					   options: .allowUserInteraction,
+					   animations: { self.transform = CGAffineTransform.identity },
+					   completion: nil)
+	}
+}

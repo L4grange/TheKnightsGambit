@@ -12,6 +12,9 @@ struct Constants {
 	static let knightOutline = "♘"
 	static let knightFilled = "♞"
 
+	// MARK: - Durations
+	static let defaultAnimationDuration = 0.3
+
 	// MARK: - Colors
 	static let woodColor = UIColor(red: 85.0/255.0, green: 60.0/255.0, blue: 42.0/255.0, alpha: 1.0)
 

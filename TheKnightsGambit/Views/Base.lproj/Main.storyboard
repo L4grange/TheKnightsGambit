@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Knight's Gambit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxB-Lr-1Ru">
-                                <rect key="frame" x="95.666666666666671" y="63.999999999999993" width="236.66666666666663" height="28.666666666666664"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="The Knight's Gambit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxB-Lr-1Ru">
+                                <rect key="frame" x="16" y="63.999999999999993" width="396" height="28.666666666666664"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6c-h5-4bL">
-                                <rect key="frame" x="140.66666666666666" y="641.66666666666663" width="146.99999999999997" height="40"/>
+                                <rect key="frame" x="140.66666666666666" y="649.66666666666663" width="146.99999999999997" height="40"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Fcr-sL-7f0"/>
@@ -74,7 +74,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" translatesAutoresizingMaskIntoConstraints="NO" id="nlD-KK-Hkr" customClass="ChessBoardView" customModule="TheKnightsGambit" customModuleProvider="target">
-                                <rect key="frame" x="20" y="233.66666666666663" width="388" height="388"/>
+                                <rect key="frame" x="16" y="233.66666666666663" width="396" height="396"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nlD-KK-Hkr" secondAttribute="height" multiplier="1:1" id="QEW-EB-xDw"/>
@@ -95,10 +95,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nlD-KK-Hkr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="1LR-lT-QlQ"/>
+                            <constraint firstItem="nlD-KK-Hkr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1LR-lT-QlQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YpC-cQ-ZmS" secondAttribute="trailing" constant="16" id="8Wm-cA-rmT"/>
-                            <constraint firstItem="JxB-Lr-1Ru" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CAL-7q-rZo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nlD-KK-Hkr" secondAttribute="trailing" constant="20" id="HO7-WW-fZt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JxB-Lr-1Ru" secondAttribute="trailing" constant="16" id="CzB-x2-jzG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nlD-KK-Hkr" secondAttribute="trailing" constant="16" id="HO7-WW-fZt"/>
                             <constraint firstItem="RIF-aq-GWE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="KxD-W9-KUM"/>
                             <constraint firstItem="W6c-h5-4bL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LEZ-BX-L91"/>
                             <constraint firstItem="JxB-Lr-1Ru" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="O0t-Q4-rHz"/>
@@ -106,6 +106,7 @@
                             <constraint firstItem="nlD-KK-Hkr" firstAttribute="top" secondItem="YpC-cQ-ZmS" secondAttribute="bottom" constant="20" id="Q3D-mx-ExD"/>
                             <constraint firstItem="YpC-cQ-ZmS" firstAttribute="top" secondItem="RIF-aq-GWE" secondAttribute="bottom" constant="20" id="V4e-iQ-iTN"/>
                             <constraint firstItem="nlD-KK-Hkr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c2c-wr-iIa"/>
+                            <constraint firstItem="JxB-Lr-1Ru" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="c8G-GS-1YU"/>
                             <constraint firstItem="RIF-aq-GWE" firstAttribute="top" secondItem="JxB-Lr-1Ru" secondAttribute="bottom" constant="8" symbolic="YES" id="cdl-1P-R0C"/>
                             <constraint firstItem="YpC-cQ-ZmS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gS6-y1-epB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="W6c-h5-4bL" secondAttribute="bottom" constant="8" id="mYs-6O-n7g"/>
