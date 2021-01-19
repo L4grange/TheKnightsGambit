@@ -84,7 +84,7 @@ class ChessViewController: UIViewController {
 	private func setPathDescription(allPaths: Bool = false) {
 		pathDescriptionLabel.text = allPaths
 			? "Showing all \(knightPaths.count) paths."
-			: "Path \(visiblePathIndex + 1) of \(knightPaths.count): \(knightPaths[visiblePathIndex])"
+			: "Path \(visiblePathIndex + 1) of \(knightPaths.count): \(knightPaths[visiblePathIndex].notation(for: Int(dimentionStepper.value)))"
 	}
 
 	// MARK: - IBActions

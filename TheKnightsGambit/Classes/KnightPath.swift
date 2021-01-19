@@ -15,4 +15,8 @@ struct KnightPath: CustomStringConvertible {
 	let move2: Position
 
 	var description: String { "M1\(move1) | M2\(move2)" }
+
+	func notation(for dimentions: Int) -> String {
+		return "\(move1.getNotation(for: dimentions)) , \(move2.getNotation(for: dimentions))"
+	}
 }

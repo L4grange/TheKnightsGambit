@@ -32,4 +32,8 @@ struct Constants {
 		UIColor.systemOrange.brightened(by: 0.8),
 		UIColor.systemOrange.brightened(by: 1.8),
 	]
+
+	// MARK: - Other Values
+	static let aUnicodeScalar = Int(UnicodeScalar("a").value)
+
 }

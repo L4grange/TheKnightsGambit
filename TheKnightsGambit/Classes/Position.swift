@@ -45,4 +45,14 @@ struct Position: Equatable, CustomStringConvertible {
 			&& self.col < boardDimentions
 	}
 
+	/**
+	Returns the algebric notation of this position, such as a1, h8, etc.
+
+	- parameter boardDimentions: The size of the board
+	- returns: the algebric notation of thios position
+	*/
+	func getNotation(for boardDimentions: Int) -> String {
+		return "\((col).asLetter!)\((boardDimentions - row))"
+	}
+
 }

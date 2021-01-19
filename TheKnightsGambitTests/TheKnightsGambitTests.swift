@@ -49,6 +49,23 @@ class TheKnightsGambitTests: XCTestCase {
 		XCTAssertEqual(position.isValidMove(boardDimentions: boardDimentions), false, "Position is not valid for \(boardDimentions)")
 	}
 
+	func testPositionNotation() {
+		boardDimentions = 8
+		let position1 = Position(row: 0, col: 0)
+		let position2 = Position(row: 7, col: 0)
+		let position3 = Position(row: 2, col: 1)
+		let position4 = Position(row: 5, col: 6)
+		let position5 = Position(row: 0, col: 7)
+		let position6 = Position(row: 7, col: 7)
+
+		XCTAssertEqual(position1.getNotation(for: boardDimentions), "a8", "Notation for \(position1) should be a8")
+		XCTAssertEqual(position2.getNotation(for: boardDimentions), "a1", "Notation for \(position2) should be a1")
+		XCTAssertEqual(position3.getNotation(for: boardDimentions), "b6", "Notation for \(position3) should be b6")
+		XCTAssertEqual(position4.getNotation(for: boardDimentions), "g3", "Notation for \(position4) should be g3")
+		XCTAssertEqual(position5.getNotation(for: boardDimentions), "h8", "Notation for \(position5) should be h8")
+		XCTAssertEqual(position6.getNotation(for: boardDimentions), "h1", "Notation for \(position6) should be h1")
+	}
+
 
 	// MARK: - Chess Solver Tests
 

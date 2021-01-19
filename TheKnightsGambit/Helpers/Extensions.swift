@@ -17,6 +17,15 @@ extension BinaryInteger {
 	}
 }
 
+extension Int {
+	var asLetter: Character? {
+		if let u = UnicodeScalar(self + Constants.aUnicodeScalar) {
+			return Character(u)
+		}
+		return nil
+	}
+}
+
 extension UIColor {
 	/// Returns a brighter version of the color for values > 1 and a  darker one for values < 1
 	func brightened(by factor: CGFloat) -> UIColor {
